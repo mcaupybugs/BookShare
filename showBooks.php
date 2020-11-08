@@ -26,7 +26,9 @@ $result = mysqli_query($connection, $query);
 ?>
 
 
-<div style="margin-top:100px">
+
+<div class="container" style="margin-top:100px">
+    <h1>List of available books</h1>
     <table class="table table-dark">
         <thead>
             <tr>

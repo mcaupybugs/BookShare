@@ -1,6 +1,5 @@
 <?php
 require "db.php";
-session_start();
 ?>
 
 
@@ -46,6 +45,15 @@ session_start();
                 ?>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="showBooks.php">Show My Books</a>
+                    </li>
+                <?php
+                }
+                ?>
+                <?php
+                if (isset($_SESSION['loggedin'])) {
+                ?>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="logout.php">Logout</a>
                     </li>
                 <?php
                 }
