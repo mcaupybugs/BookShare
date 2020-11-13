@@ -35,6 +35,7 @@ $result = mysqli_query($connection, $query);
                 <th scope="col">Book ID</th>
                 <th scope="col">Book Name</th>
                 <th scope="col">Address</th>
+                <th scope="col">Contact</th>
                 <th scope="col">User Owning</th>
             </tr>
         </thead>
@@ -48,6 +49,7 @@ $result = mysqli_query($connection, $query);
                     <td><?php print_r($row[1]) ?></td>
                     <td><?php print_r($row[2]) ?></td>
                     <td><?php print_r($row[3]) ?></td>
+                    <td><?php print_r($row[4]) ?></td>
                 </tr>
             <?php
             }

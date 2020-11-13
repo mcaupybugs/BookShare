@@ -17,7 +17,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         $book_name = $_POST['bookname'];
         $address = $_POST['address'];
         $user_id = $_SESSION['userid'];
-        $addQuery = "INSERT INTO book (book_name,address,user_id) VALUES ('$book_name','$address','$user_id')";
+        $contact = $_POST['contact'];
+        $addQuery = "INSERT INTO book (book_name,address,contact,user_id) VALUES ('$book_name','$address','$contact','$user_id')";
         $rr = mysqli_query($connection, $addQuery);
         if (!$rr) {
             header("Location:addBook.php");
@@ -55,6 +56,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 <div class="form-group">
                     <label>Address</label>
                     <input type="text" name="address" class="form-control" placeholder="Address">
+                </div>
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input type="text" name="contact" class="form-control" placeholder="Contact">
                 </div>
                 <button type="submit" name="addbook" class="btn btn-black">Add Book</button>
             </form>
