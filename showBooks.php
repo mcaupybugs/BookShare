@@ -20,7 +20,7 @@ if (!isset($_SESSION["loggedin"])) {
 $db_id = $_SESSION['userid'];
 
 
-$query = "SELECT * FROM book WHERE user_id ='$db_id'";
+$query = "SELECT * FROM book";
 $result = mysqli_query($connection, $query);
 
 ?>
@@ -44,7 +44,6 @@ $result = mysqli_query($connection, $query);
             while ($row = mysqli_fetch_row($result)) {
             ?>
                 <tr>
-
                     <th scope="row"><?php print_r($row[0]) ?></th>
                     <td><?php print_r($row[1]) ?></td>
                     <td><?php print_r($row[2]) ?></td>

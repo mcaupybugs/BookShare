@@ -8,8 +8,8 @@ require "header.php";
 <?php
 require "navigation.php";
 ?>
-<?php
 
+<?php
 $result = '';
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: index.php");
@@ -35,17 +35,18 @@ if (isset($_POST["login"])) {
         $db_id = $row['user_id'];
         $db_username = $row['username'];
         $db_password = $row['password'];
-        if ($db_password === $username && $password === $db_password) {
-            $result = "Invalid username or password";
-            header("location: login.php");
+
+        // checking if password matches
+
+        if ($password == $db_password) {
+            $_SESSION['userid'] = $db_id;
+            $_SESSION['username'] = $db_username;
+            $_SESSION['password'] = $db_password;
+            $_SESSION['loggedin'] = true;
+            header("location: index.php");
         }
-        $_SESSION['userid'] = $db_id;
-        $_SESSION['username'] = $db_username;
-        $_SESSION['password'] = $db_password;
-        $_SESSION['loggedin'] = true;
-        header("location: index.php");
     }
-    header("location:index.php");
+    header("location:login.php");
 }
 
 ?>

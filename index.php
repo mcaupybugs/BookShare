@@ -2,7 +2,6 @@
 <html lang="en">
 <?php
 require "db.php";
-
 ?>
 <?php
 require "header.php";
